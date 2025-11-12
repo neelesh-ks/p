@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neelesh K. Sharma | Ergonomics & Design Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Font: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        /* Custom styles */
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Active tab style */
+        .tab-button.active {
+            border-color: #4f46e5; /* indigo-600 */
+            color: #4f46e5;
+            font-weight: 600;
+        }
+
+        /* Tab content panel */
+        .tab-panel {
+            display: none; /* Hidden by default */
+        }
+        .tab-panel.active {
+            display: block; /* Shown when active */
+        }
+
+        /* Sticky nav background */
+        .nav-scrolled {
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            backdrop-filter: blur(8px);
+        }
+
+        /* Simple fade-in animation for scroll */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Gallery thumbnail style */
+        .gallery-thumb {
+            cursor: pointer;
+            opacity: 0.7;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            border: 2px solid transparent;
+        }
+        .gallery-thumb:hover {
+            opacity: 1;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800">
+
+    <!-- Header & Navigation -->
+    <header id="main-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+        <nav class="container mx-auto max-w-6xl px-6 py-4">
+            <div class="flex justify-between items-center">
+                <a href="#home" class="text-xl font-bold text-indigo-600">Neelesh Kr. Sharma</a>
+                <div class="hidden md:flex space-x-6">
+                    <a href="#about" class="font-medium text-gray-600 hover:text-indigo-600">About</a>
+                    <a href="#projects" class="font-medium text-gray-600 hover:text-indigo-600">Projects</a>
+                    <a href="#publications" class="font-medium text-gray-600 hover:text-indigo-600">Publications</a>
+                    <a href="#contact" class="font-medium text-gray-600 hover:text-indigo-600">Contact</a>
+                </div>
+                <div class="md:hidden">
+                    <!-- Mobile menu button (can be implemented with JS) -->
+                    <i data-lucide="menu" class="text-gray-600"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- Section 1: Hero -->
+        <section id="home" class="pt-32 pb-24 bg-gray-50">
+            <div class="container mx-auto max-w-6xl px-6">
+                <div class="grid md:grid-cols-3 gap-12 items-center">
+                    <!-- Headshot -->
+                    <div class="flex justify-center md:col-span-1">
+                        <img src="https://placehold.co/300x300/e2e8f0/333?text=Neelesh+K.+Sharma" 
+                             alt="Neelesh K. Sharma"
+                             class="rounded-full w-64 h-64 md:w-80 md:h-80 object-cover shadow-xl border-4 border-white">
+                        <!-- Image placeholder representing your headshot from the CV -->
+                    </div>
+                    <!-- Hero Text -->
+                    <div class="md:col-span-2 text-center md:text-left">
+                        <h1 class="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
+                            Neelesh Kr. Sharma
+                        </h1>
+                        <h2 class="text-2xl md:text-3xl font-medium text-indigo-600 mt-2">
+                            Researcher | Designer | Human Factors Expert
+                        </h2>
+                        <p class="text-lg text-gray-600 mt-6 max-w-3xl">
+                            Distinguished researcher with a decade of expertise in applied ergonomics, biomechanical analysis, and AI-driven human factors engineering. My work translates interdisciplinary research into practical innovations to solve complex human-machine interaction challenges.
+                        </p>
+                        <!-- Social Links -->
+                        <div class="flex justify-center md:justify-start space-x-6 mt-8">
+                            <a href="https://www.linkedin.com/in/neeleshksharma" target="_blank" title="LinkedIn" class="text-gray-500 hover:text-indigo-600">
+                                <i data-lucide="linkedin" class="w-7 h-7"></i>
+                            </a>
+                            <a href="https://scholar.google.com/citations?user=jd4kIlgAAAAJ" target="_blank" title="Google Scholar" class="text-gray-500 hover:text-indigo-600">
+                                <i data-lucide="graduation-cap" class="w-7 h-7"></i>
+                            </a>
+                            <a href="mailto:neeleshksharma@gmail.com" title="Email" class="text-gray-500 hover:text-indigo-600">
+                                <i data-lucide="mail" class="w-7 h-7"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: About & Skills -->
+        <section id="about" class="py-24 fade-in-section">
+            <div class="container mx-auto max-w-6xl px-6">
+                <div class="grid md:grid-cols-3 gap-12">
+                    <!-- My Mission -->
+                    <div class="md:col-span-2">
+                        <h2 class="text-3xl font-bold mb-6">My Mission</h2>
+                        <p class="text-lg text-gray-600 space-y-4">
+                            I bridge the gap between human physiology and engineering. My goal is to use AI, computational modeling, and human-centered design to create systems that aren't just efficient, but are also safe, sustainable, and intuitive.
+                            <br><br>
+                            With a PhD from IIT Patna and experience at institutions like IIT Gandhinagar, I've led projects from field research to patented, award-winning products. I believe the best technology adapts to people, not the other way around.
+                        </p>
+                    </div>
+                    <!-- Core Competencies -->
+                    <div class="md:col-span-1">
+                        <h2 class="text-3xl font-bold mb-6">Core Competencies</h2>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-indigo-100 text-indigo-800 text-sm font-medium px-3 py-1 rounded-full">Ergonomics</span>
+                            <span class="bg-indigo-100 text-indigo-800 text-sm font-medium px-3 py-1 rounded-full">Human-Centered Design</span>
+                            <span class="bg-indigo-100 text-indigo-800 text-sm font-medium px-3 py-1 rounded-full">Biomechanical Analysis</span>
+                            <span class="bg-indigo-100 text-indigo-800 text-sm font-medium px-3 py-1 rounded-full">FEA Simulation</span>
+                            <span class="bg-gray-200 text-gray-800 text-sm font-medium px-3 py-1 rounded-full">ANSYS</span>
+                            <span class="bg-gray-200 text-gray-800 text-sm font-medium px-3 py-1 rounded-full">3DSSPP</span>
+                            <span class="bg-gray-200 text-gray-800 text-sm font-medium px-3 py-1 rounded-full">SolidWorks</span>
+                            <span class="bg-gray-200 text-gray-800 text-sm font-medium px-3 py-1 rounded-full">Python</span>
+                            <span class="bg-gray-200 text-gray-800 text-sm font-medium px-3 py-1 rounded-full">R</span>
+                            <span class="bg-gray-200 text-gray-800 text-sm font-medium px-3 py-1 rounded-full">MATLAB</span>
+                            <span class="bg-gray-200 text-gray-800 text-sm font-medium px-3 py-1 rounded-full">Wearable Sensors</span>
+                            <span class="bg-gray-200 text-gray-800 text-sm font-medium px-3 py-1 rounded-full">Prototyping</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Featured Projects -->
+        <section id="projects" class="py-24 bg-gray-50 fade-in-section">
+            <div class="container mx-auto max-w-6xl px-6">
+                <h2 class="text-4xl font-bold text-center mb-12">Featured Projects</h2>
+                
+                <!-- Tab Buttons -->
+                <div class="flex flex-wrap justify-center border-b border-gray-300 mb-12">
+                    <button class="tab-button active text-lg font-medium text-gray-500 border-b-2 border-transparent px-6 py-3 transition-all" onclick="showTab('project1')">
+                        Ergonomic Cart
+                    </button>
+                    <button class="tab-button text-lg font-medium text-gray-500 border-b-2 border-transparent px-6 py-3 transition-all" onclick="showTab('project2')">
+                        Smart Glove
+                    </button>
+                    <button class="tab-button text-lg font-medium text-gray-500 border-b-2 border-transparent px-6 py-3 transition-all" onclick="showTab('project3')">
+                        Biomechanical FEA
+                    </button>
+                    <button class="tab-button text-lg font-medium text-gray-500 border-b-2 border-transparent px-6 py-3 transition-all" onclick="showTab('project4')">
+                        Automotive FEA
+                    </button>
+                </div>
+
+                <!-- Tab Content -->
+                <div id="tab-content">
+
+                    <!-- Project 1: Ergonomic Cart -->
+                    <div id="project1" class="tab-panel active fade-in-section is-visible">
+                        <div class="grid md:grid-cols-2 gap-12 items-center">
+                            <div>
+                                <h3 class="text-3xl font-bold mb-4">Ergonomic Street Cleaning Cart</h3>
+                                <span class="inline-block bg-green-100 text-green-800 text-sm font-medium px-3 py-1 rounded-full mb-4">Patented & Award-Winning</span>
+                                
+                                <h4 class="text-xl font-semibold mb-2">The Challenge</h4>
+                                <p class="text-gray-600 mb-4">Field research with 150+ municipal workers revealed a 63% prevalence of Work-Related Musculoskeletal Disorders (WMSDs), primarily from high-risk "scraping" and "picking" tasks.</p>
+                                
+                                <h4 class="text-xl font-semibold mb-2">The Solution</h4>
+                                <p class="text-gray-600 mb-4">A patented (No. 441947-001), low-cost ergonomic cart developed through four iterative prototypes. The design allows workers to maintain an erect posture, dramatically reducing spinal loads.</p>
+                                
+                                <h4 class="text-xl font-semibold mb-2">Key Outcomes</h4>
+                                <ul class="text-gray-600 space-y-2">
+                                    <li class="flex items-center"><i data-lucide="check-circle" class="w-5 h-5 text-green-500 mr-2"></i>**41% reduction** in spinal compression forces.</li>
+                                    <li class="flex items-center"><i data-lucide="check-circle" class="w-5 h-5 text-green-500 mr-2"></i>**63% reduction** in worker injury rates.</li>
+                                    <li class="flex items-center"><i data-lucide="check-circle" class="w-5 h-5 text-green-500 mr-2"></i>**100% increase** in worker productivity.</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <!-- Image Gallery -->
+                                <img id="main-image-cart" src="https://placehold.co/600x450/e2e8f0/333?text=Final+Ergonomic+Cart+(Fig+4)" alt="Ergonomic Cart Final Prototype" class="w-full rounded-lg shadow-lg mb-4 object-cover">
+                                <div class="flex gap-2 justify-center">
+                                    <img src="https://placehold.co/100x75/e2e8f0/333?text=High-Risk+Posture+(Fig+6)" alt="High-risk manual posture" class="gallery-thumb rounded" onclick="changeImage('cart', 'https://placehold.co/600x450/e2e8f0/333?text=High-Risk+Manual+Posture+(Fig+6)')">
+                                    <img src="https://placehold.co/100x75/e2e8f0/333?text=Prototype+Evolution+(Fig+2)" alt="Prototype evolution" class="gallery-thumb rounded" onclick="changeImage('cart', 'https://placehold.co/600x450/e2e8f0/333?text=Prototype+Evolution+(Fig+2)')">
+                                    <img src="https://placehold.co/100x75/e2e8f0/333?text=Before/After+Pain+Map+(Fig+9)" alt="Pain map" class="gallery-thumb rounded" onclick="changeImage('cart', 'https://placehold.co/600x450/e2e8f0/333?text=Before/After+Pain+Map+(Fig+9)')">
+                                    <img src="https://placehold.co/100x75/e2e8f0/333?text=Final+Prototype+(Fig+4)" alt="Final prototype" class="gallery-thumb rounded" onclick="changeImage('cart', 'https://placehold.co/600x450/e2e8f0/333?text=Final+Ergonomic+Cart+(Fig+4)')">
+                                </div>
+                                <p class="text-xs text-gray-500 text-center mt-2">Click thumbnails to see more. (Placeholders represent images from 'Evaluating biomechanical risks...' PDF)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 2: Smart Glove -->
+                    <div id="project2" class="tab-panel fade-in-section">
+                        <div class="grid md:grid-cols-2 gap-12 items-center">
+                            <div>
+                                <h3 class="text-3xl font-bold mb-4">Ergonomic Smart Glove</h3>
+                                 <span class="inline-block bg-green-100 text-green-800 text-sm font-medium px-3 py-1 rounded-full mb-4">Patented (No. 202421050076)</span>
+                                
+                                <h4 class="text-xl font-semibold mb-2">The Goal</h4>
+                                <p class="text-gray-600 mb-4">To create an intelligent, wearable device that provides real-time feedback to workers in labor-intensive industries, preventing WMSDs before they occur by monitoring overuse strain.</p>
+                                
+                                <h4 class="text-xl font-semibold mb-2">The Technology</h4>
+                                <p class="text-gray-600 mb-4">The prototype uses an Arduino Nano, Force-Sensitive Resistors (FSRs), and inertial sensors. A Human-Centered Design (HCD) approach was used to ensure the glove is accurate, comfortable, and accepted by users.</p>
+                                
+                                <h4 class="text-xl font-semibold mb-2">My Role</h4>
+                                <ul class="text-gray-600 space-y-2">
+                                    <li class="flex items-center"><i data-lucide="check-circle" class="w-5 h-5 text-green-500 mr-2"></i>Principal Investigator for two seed grants (₹1.9 Lakh).</li>
+                                    <li class="flex items-center"><i data-lucide="check-circle" class="w-5 h-5 text-green-500 mr-2"></i>Led project from concept to patented, award-winning prototype.</li>
+                                    <li class="flex items-center"><i data-lucide="check-circle" class="w-5 h-5 text-green-500 mr-2"></i>Calibrated sensors and validated device accuracy.</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <!-- Image Gallery -->
+                                <img id="main-image-glove" src="https://placehold.co/600x450/e2e8f0/333?text=Glove+Testing+in-use+(Fig+7)" alt="Smart Glove Testing" class="w-full rounded-lg shadow-lg mb-4 object-cover">
+                                <div class="flex gap-2 justify-center">
+                                    <img src="https://placehold.co/100x75/e2e8f0/333?text=HCD+Flowchart+(Fig+1)" alt="HCD Flowchart" class="gallery-thumb rounded" onclick="changeImage('glove', 'https://placehold.co/600x450/e2e8f0/333?text=HCD+Flowchart+(Fig+1)')">
+                                    <img src="https://placehold.co/100x75/e2e8f0/333?text=2D+Glove+Design+(Fig+2)" alt="Glove 2D Design" class="gallery-thumb rounded" onclick="changeImage('glove', 'https://placehold.co/600x450/e2e8f0/333?text=2D+Glove+Design+(Fig+2)')">
+                                    <img src="https://placehold.co/100x75/e2e8f0/333?text=Sensor+Calibration+Data+(Fig+5)" alt="Sensor Calibration Data" class="gallery-thumb rounded" onclick="changeImage('glove', 'https://placehold.co/600x450/e2e8f0/333?text=Sensor+Calibration+Data+(Fig+5)')">
+                                    <img src="https://placehold.co/100x75/e2e8f0/333?text=Glove+Testing+(Fig+7)" alt="Glove Testing" class="gallery-thumb rounded" onclick="changeImage('glove', 'https://placehold.co/600x450/e2e8f0/333?text=Glove+Testing+in-use+(Fig+7)')">
+                                </div>
+                                <p class="text-xs text-gray-500 text-center mt-2">Click thumbnails to see more. (Placeholders represent images from 'Ergonomic Smart Gloves...' PDF)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 3: Biomechanical FEA -->
+                    <div id="project3" class="tab-panel fade-in-section">
+                        <div class="grid md:grid-cols-2 gap-12 items-center">
+                            <div>
+                                <h3 class="text-3xl font-bold mb-4">Biomechanical FEA of Humerus Bone</h3>
+                                
+                                <h4 class="text-xl font-semibold mb-2">The Objective</h4>
+                                <p class="text-gray-600 mb-4">To apply advanced Finite Element Analysis (FEA) to model and analyze the human humerus bone. The goal was to understand its biodynamic response to vibration and identify frequencies that could lead to fracture.</p>
+                                
+                                <h4 class="text-xl font-semibold mb-2">The Application</h4>
+                                <p class="text-gray-600 mb-4">This research has direct applications in biomedical device design and occupational health. The analysis was extended to model bone fracture healing, including the design and structural analysis of supporting plates and screws.</p>
+                                
+                                <h4 class="text-xl font-semibold mb-2">Tools Used</h4>
+                                <ul class="text-gray-600 space-y-2">
+                                    <li class="flex items-center"><i data-lucide="check-circle" class="w-5 h-5 text-green-500 mr-2"></i>**Solid Edge:** For high-fidelity 3D modeling of the bone.</li>
+                                    <li class="flex items-center"><i data-lucide="check-circle" class="w-5 h-5 text-green-500 mr-2"></i>**ANSYS:** For complex free vibration and modal analysis.</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <!-- Image Gallery -->
+                                <img id="main-image-humerus" src="https://placehold.co/600x450/e2e8f0/333?text=FEA+Vibration+Analysis+(Fig+3)" alt="FEA Vibration Analysis" class="w-full rounded-lg shadow-lg mb-4 object-cover">
+                                <div class="flex gap-2 justify-center">
+                                    <img src="https://placehold.co/100x75/e2e8f0/333?text=3D+CAD+Model+(Fig+1)" alt="3D CAD Model" class="gallery-thumb rounded" onclick="changeImage('humerus', 'https://placehold.co/600x450/e2e8f0/333?text=3D+CAD+Model+(Fig+1)')">
+                                    <img src="https://placehold.co/100x75/e2e8f0/333?text=FEA+Mesh+Model+(Fig+2)" alt="FEA Mesh Model" class="gallery-thumb rounded" onclick="changeImage('humerus', 'https://placehold.co/600x450/e2e8f0/333?text=FEA+Mesh+Model+(Fig+2)')">
+                                    <img src="https://placehold.co/100x75/e2e8f0/333?text=Mode+Shape+Graph+(Fig+3)" alt="Mode Shape Frequency Graph" class="gallery-thumb rounded" onclick="changeImage('humerus', 'https://placehold.co/600x450/e2e8f0/333?text=Mode+Shape+Frequency+Graph+(Fig+3)')">
+                                    <img src="https://placehold.co/100x75/e2e8f0/333?text=Vibration+Analysis+(Fig+3)" alt="Vibration Analysis Plot" class="gallery-thumb rounded" onclick="changeImage('humerus', 'https://placehold.co/600x450/e2e8f0/333?text=FEA+Vibration+Analysis+(Fig+3)')">
+                                </div>
+                                <p class="text-xs text-gray-500 text-center mt-2">Click thumbnails to see more. (Placeholders represent images from 'Finite Element Analysis...' PDF)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 4: Automotive FEA -->
+                    <div id="project4" class="tab-panel fade-in-section">
+                        <div class="grid md:grid-cols-2 gap-12 items-center">
+                            <div>
+                                <h3 class="text-3xl font-bold mb-4">Composite Drive Shaft Analysis</h3>
+                                
+                                <h4 class="text-xl font-semibold mb-2">The Problem</h4>
+                                <p class="text-gray-600 mb-4">Heavy vehicle drive shafts (propeller shafts) are heavy and prone to resonance (whirling) at critical speeds, leading to vibration and failure. Conventional shafts are often two-piece, adding weight and complexity.</p>
+                                
+                                <h4 class="text-xl font-semibold mb-2">The Analysis</h4>
+                                <p class="text-gray-600 mb-4">Performed FEA-based modal analysis to compare a single-piece composite drive shaft (HS Carbon Epoxy, E-Glass) against the conventional Steel SM45C shaft.</p>
+                                
+                                <h4 class="text-xl font-semibold mb-2">Key Finding</h4>
+                                <ul class="text-gray-600 space-y-2">
+                                    <li class="flex items-center"><i data-lucide="check-circle" class="w-5 h-5 text-green-500 mr-2"></i>The **HS Carbon Epoxy** composite was the optimal material.</li>
+                                    <li class="flex items-center"><i data-lucide="check-circle" class="w-5 h-5 text-green-500 mr-2"></i>Its natural frequency (10,930 rpm) was far above the vehicle's critical speed (2,400-4,000 rpm), eliminating resonance.</li>
+                                    <li class="flex items-center"><i data-lucide="check-circle" class="w-5 h-5 text-green-500 mr-2"></i>Proved the viability of a lighter, stronger, and more reliable single-piece composite design.</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <!-- Image Gallery -->
+                                <img id="main-image-shaft" src="https://placehold.co/600x450/e2e8f0/333?text=HS+Carbon+Shaft+Analysis+(Fig+3)" alt="HS Carbon Shaft Analysis" class="w-full rounded-lg shadow-lg mb-4 object-cover">
+                                <div class="flex gap-2 justify-center">
+                                    <img src="https://placehold.co/100x75/e2e8f0/333?text=CAD+Model+of+Shaft+(Fig+1)" alt="CAD Model of Shaft" class="gallery-thumb rounded" onclick="changeImage('shaft', 'https://placehold.co/600x450/e2e8f0/333?text=CAD+Model+of+Shaft+(Fig+1)')">
+                                    <img src="https://placehold.co/100x75/e2e8f0/333?text=Steel+Shaft+Analysis+(Fig+2)" alt="Steel Shaft Analysis" class="gallery-thumb rounded" onclick="changeImage('shaft', 'https://placehold.co/600x450/e2e8f0/333?text=Steel+Shaft+Analysis+(Fig+2)')">
+                                    <img src="https://placehold.co/100x75/e2e8f0/333?text=E-Glass+Shaft+Analysis+(Fig+4)" alt="E-Glass Shaft Analysis" class="gallery-thumb rounded" onclick="changeImage('shaft', 'https://placehold.co/600x450/e2e8f0/333?text=E-Glass+Shaft+Analysis+(Fig+4)')">
+                                    <img src="https://placehold.co/100x75/e2e8f0/333?text=HS+Carbon+Shaft+(Fig+3)" alt="HS Carbon Shaft" class="gallery-thumb rounded" onclick="changeImage('shaft', 'https://placehold.co/600x450/e2e8f0/333?text=HS+Carbon+Shaft+Analysis+(Fig+3)')">
+                                </div>
+                                <p class="text-xs text-gray-500 text-center mt-2">Click thumbnails to see more. (Placeholders represent images from 'FEA Based Vibration...' PDF)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        
+        <!-- Section 4: Publications -->
+        <section id="publications" class="py-24 fade-in-section">
+            <div class="container mx-auto max-w-4xl px-6">
+                <h2 class="text-4xl font-bold text-center mb-12">Key Publications & Patents</h2>
+                
+                <div class="space-y-8">
+                    <!-- Publication 1 -->
+                    <div class="p-6 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
+                        <span class="text-sm font-medium text-indigo-600">Ergonomics (Journal) | 2025</span>
+                        <h3 class="text-xl font-semibold mt-1 mb-2">Evaluating biomechanical risks in manual material handling: an ergonomic intervention approach.</h3>
+                        <p class="text-gray-600 mb-3">The capstone paper of my PhD research, detailing the field study and intervention that reduced spinal loads by 41%.</p>
+                        <a href="https://doi.org/10.1080/00140139.2025.2473678" target="_blank" class="font-medium text-indigo-600 hover:text-indigo-800">Read Paper <i data-lucide="arrow-up-right" class="inline w-4 h-4"></i></a>
+                    </div>
+                    
+                    <!-- Patent 1 -->
+                    <div class="p-6 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
+                        <span class="text-sm font-medium text-indigo-600">Indian Patent | 2024</span>
+                        <h3 class="text-xl font-semibold mt-1 mb-2">Smart Gloves for Real-time Force Measurement (Patent No. 202421050076)</h3>
+                        <p class="text-gray-600 mb-3">The resulting patent for the wearable device developed to monitor and prevent WMSDs in real-time.</p>
+                    </div>
+
+                    <!-- Publication 2 -->
+                    <div class="p-6 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
+                        <span class="text-sm font-medium text-indigo-600">Intl. Journal of Occupational Safety & Ergonomics | 2021</span>
+                        <h3 class="text-xl font-semibold mt-1 mb-2">A Systematic Review of Methodologies and Techniques for Integrating Ergonomics...</h3>
+                        <p class="text-gray-600 mb-3">A comprehensive review establishing best practices for integrating human factors into equipment design.</p>
+                        <a href="https://doi.org/10.1080/10803548.2020.1862552" target="_blank" class="font-medium text-indigo-600 hover:text-indigo-800">Read Paper <i data-lucide="arrow-up-right" class="inline w-4 h-4"></i></a>
+                    </div>
+                    
+                    <!-- Publication 3 -->
+                    <div class="p-6 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
+                        <span class="text-sm font-medium text-indigo-600">Materials Today: Proceedings | 2017</span>
+                        <h3 class="text-xl font-semibold mt-1 mb-2">Finite Element Analysis of Humerus Bone for Cup Radius Variations.</h3>
+                        <p class="text-gray-600 mb-3">One of my core papers on applying FEA to biological systems to predict fracture and inform medical device design.</p>
+                        <a href="#" class="font-medium text-gray-500 cursor-not-allowed">Read Paper (Link not available)</a>
+                    </div>
+                </div>
+                 <div class="text-center mt-12">
+                     <a href="https://scholar.google.com/citations?user=jd4kIlgAAAAJ" target="_blank" class="text-lg font-medium text-indigo-600 hover:text-indigo-800">
+                        View All Publications on Google Scholar <i data-lucide="arrow-right" class="inline w-5 h-5"></i>
+                    </a>
+                 </div>
+            </div>
+        </section>
+
+        <!-- Section 5: Contact -->
+        <section id="contact" class="py-24 bg-gray-900 text-white fade-in-section">
+            <div class="container mx-auto max-w-3xl px-6 text-center">
+                <h2 class="text-4xl font-bold mb-4">Let's Collaborate</h2>
+                <p class="text-lg text-gray-300 mb-8 max-w-xl mx-auto">
+                    I am actively seeking opportunities to advance cutting-edge research in biomechanics, human factors, and wearable technology at leading international institutions.
+                </p>
+                <a href="mailto:neeleshksharma@gmail.com" class="inline-block bg-indigo-600 text-white text-lg font-semibold px-8 py-4 rounded-lg hover:bg-indigo-500 transition-colors">
+                    Get in Touch
+                </a>
+                <div class="flex justify-center space-x-8 mt-12">
+                    <a href="https://www.linkedin.com/in/neeleshksharma" target="_blank" title="LinkedIn" class="text-gray-400 hover:text-white">
+                        <i data-lucide="linkedin" class="w-8 h-8"></i>
+                    </a>
+                    <a href="https://scholar.google.com/citations?user=jd4kIlgAAAAJ" target="_blank" title="Google Scholar" class="text-gray-400 hover:text-white">
+                        <i data-lucide="graduation-cap" class="w-8 h-8"></i>
+                    </a>
+                    <a href="mailto:neeleshksharma@gmail.com" title="Email" class="text-gray-400 hover:text-white">
+                        <i data-lucide="mail" class="w-8 h-8"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white py-6">
+        <div class="container mx-auto max-w-6xl px-6 text-center">
+            <p class="text-sm text-gray-500">
+                &copy; <script>document.write(new Date().getFullYear())</script> Neelesh K. Sharma. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Sticky Navigation
+        const header = document.getElementById('main-header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('nav-scrolled');
+            } else {
+                header.classList.remove('nav-scrolled');
+            }
+        });
+
+        // Tabbed Projects
+        const tabButtons = document.querySelectorAll('.tab-button');
+        const tabPanels = document.querySelectorAll('.tab-panel');
+
+        function showTab(tabId) {
+            // Deactivate all
+            tabButtons.forEach(button => button.classList.remove('active'));
+            tabPanels.forEach(panel => panel.classList.remove('active'));
+
+            // Activate clicked
+            document.querySelector(`.tab-button[onclick="showTab('${tabId}')"]`).classList.add('active');
+            document.getElementById(tabId).classList.add('active');
+        }
+
+        // Image Gallery
+        function changeImage(galleryId, newSrc) {
+            const mainImage = document.getElementById('main-image-' + galleryId);
+            mainImage.src = newSrc;
+        }
+
+        // Scroll Fade-in Animation
+        const sections = document.querySelectorAll('.fade-in-section');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    // Optional: unobserve after it's visible so it doesn't re-animate
+                    // observer.unobserve(entry.target); 
+                }
+            });
+        }, { threshold: 0.1 }); // Trigger when 10% of the section is visible
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+
+        // Set default active tab
+        document.addEventListener('DOMContentLoaded', () => {
+            showTab('project1');
+        });
+
+    </script>
+</body>
+</html>

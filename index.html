@@ -217,7 +217,6 @@
                                     <img src="14.jpg" alt="Pain map" class="gallery-thumb rounded w-24 h-20 object-cover" onclick="changeImage('cart', '14.jpg')">
                                     <img src="11.jpg" alt="Final prototype" class="gallery-thumb rounded w-24 h-20 object-cover" onclick="changeImage('cart', '11.jpg')">
                                 </div>
-                                <p class="text-xs text-gray-500 text-center mt-2">Click thumbnails to see more. (Placeholders represent images from 'Evaluating biomechanical risks...' PDF)</p>
                             </div>
                         </div>
                     </div>
@@ -282,40 +281,39 @@
                                     <img src="33.jpg" alt="Mode Shape Frequency Graph" class="gallery-thumb rounded w-24 h-20 object-cover" onclick="changeImage('humerus', '33.jpg')">
                                     <img src="34.jpg" alt="Vibration Analysis Plot" class="gallery-thumb rounded w-24 h-20 object-cover" onclick="changeImage('humerus', '34.jpg')">
                                 </div>
-                                <p class="text-xs text-gray-500 text-center mt-2">Click thumbnails to see more. (Placeholders represent images from 'Finite Element Analysis...' PDF)</p>
                             </div>
                         </div>
                     </div>
-
-                    <!-- Project 4: Automotive FEA -->
+  <!-- Project 4: Real-time ergonomic assessment -->
                     <div id="project4" class="tab-panel fade-in-section">
                         <div class="grid md:grid-cols-2 gap-12 items-center">
                             <div>
-                                <h3 class="text-3xl font-bold mb-4">Composite Drive Shaft Analysis</h3>
+                                <h3 class="text-3xl font-bold mb-4">AI-Powered Ergonomic Assessment</h3>
+                                <span class="inline-block bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full mb-4">Patent Pending (No. 202521061742)</span>
                                 
-                                <h4 class="text-xl font-semibold mb-2">The Problem</h4>
-                                <p class="text-gray-600 mb-4">Heavy vehicle drive shafts (propeller shafts) are heavy and prone to resonance (whirling) at critical speeds, leading to vibration and failure. Conventional shafts are often two-piece, adding weight and complexity.</p>
+                                <h4 class="text-xl font-semibold mb-2">The Challenge</h4>
+                                <p class="text-gray-600 mb-4">Traditional ergonomic assessments are manual, slow, and subjective. They often fail to capture dynamic, real-time risk factors in complex work environments.</p>
                                 
-                                <h4 class="text-xl font-semibold mb-2">The Analysis</h4>
-                                <p class="text-gray-600 mb-4">Performed FEA-based modal analysis to compare a single-piece composite drive shaft (HS Carbon Epoxy, E-Glass) against the conventional Steel SM45C shaft.</p>
+                                <h4 class="text-xl font-semibold mb-2">The Solution</h4>
+                                <p class="text-gray-600 mb-4">This study, published at IEA 2024, introduces an innovative approach by integrating **MoveNet Lightning** (a rapid human pose estimation model) with the **Loading on the Upper Body Assessment (LUBA)** framework. This system enables real-time, objective ergonomic risk detection from simple video feeds.</p>
                                 
-                                <h4 class="text-xl font-semibold mb-2">Key Finding</h4>
+                                <h4 class="text-xl font-semibold mb-2">Key Outcomes</h4>
                                 <ul class="text-gray-600 space-y-2">
-                                    <li class="flex items-center"><i data-lucide="check-circle" class="w-5 h-5 text-green-500 mr-2"></i>The **HS Carbon Epoxy** composite was the optimal material.</li>
-                                    <li class="flex items-center"><i data-lucide="check-circle" class="w-5 h-5 text-green-500 mr-2"></i>Its natural frequency (10,930 rpm) was far above the vehicle's critical speed (2,400-4,000 rpm), eliminating resonance.</li>
-                                    <li class="flex items-center"><i data-lucide="check-circle" class="w-5 h-5 text-green-500 mr-2"></i>Proved the viability of a lighter, stronger, and more reliable single-piece composite design.</li>
+                                    <li class="flex items-center"><i data-lucide="check-circle" class="w-5 h-5 text-green-500 mr-2"></i>Published at the 21st Congress of the International Ergonomics Association (IEA 2024).</li>
+                                    <li class="flex items-center"><i data-lucide="check-circle" class="w-5 h-5 text-green-500 mr-2"></i>Filed a patent for the "Method And System for Dynamic Ergonomic Evaluation..."</li>
+                                    <li class="flex items-center"><i data-lucide="check-circle" class="w-5 h-5 text-green-500 mr-2"></i>Proven effective in real-world scenarios (construction, waste collection) for identifying high-risk postures.</li>
                                 </ul>
                             </div>
                             <div>
+                  
                                 <!-- Image Gallery -->
-                                <img id="main-image-shaft" src="https://placehold.co/600x450/e2e8f0/333?text=HS+Carbon+Shaft+Analysis+(Fig+3)" alt="HS Carbon Shaft Analysis" class="w-full rounded-lg shadow-lg mb-4 object-cover  h-[450px]">
+                                <img id="main-image-shaft" src="41.jpg" alt="HS Carbon Shaft Analysis" class="w-full rounded-lg shadow-lg mb-4 object-cover  h-[450px]">
                                 <div class="flex gap-2 justify-center">
-                                    <img src="https://placehold.co/100x75/e2e8f0/333?text=CAD+Model+of+Shaft+(Fig+1)" alt="CAD Model of Shaft" class="gallery-thumb rounded w-24 h-20 object-cover" onclick="changeImage('shaft', 'https://placehold.co/600x450/e2e8f0/333?text=CAD+Model+of+Shaft+(Fig+1)')">
-                                    <img src="https://placehold.co/100x75/e2e8f0/333?text=Steel+Shaft+Analysis+(Fig+2)" alt="Steel Shaft Analysis" class="gallery-thumb rounded w-24 h-20 object-cover" onclick="changeImage('shaft', 'https://placehold.co/600x450/e2e8f0/333?text=Steel+Shaft+Analysis+(Fig+2)')">
-                                    <img src="https://placehold.co/100x75/e2e8f0/333?text=E-Glass+Shaft+Analysis+(Fig+4)" alt="E-Glass Shaft Analysis" class="gallery-thumb rounded w-24 h-20 object-cover" onclick="changeImage('shaft', 'https://placehold.co/600x450/e2e8f0/333?text=E-Glass+Shaft+Analysis+(Fig+4)')">
-                                    <img src="https://placehold.co/100x75/e2e8f0/333?text=HS+Carbon+Shaft+(Fig+3)" alt="HS Carbon Shaft" class="gallery-thumb rounded w-24 h-20 object-cover" onclick="changeImage('shaft', 'https://placehold.co/600x450/e2e8f0/333?text=HS+Carbon+Shaft+Analysis+(Fig+3)')">
+                                    <img src="41.jpg" alt="CAD Model of Shaft" class="gallery-thumb rounded w-24 h-20 object-cover" onclick="changeImage('shaft', '41.jpg')">
+                                    <img src="42.jpg" alt="Steel Shaft Analysis" class="gallery-thumb rounded w-24 h-20 object-cover" onclick="changeImage('shaft', '42.jpg')">
+                                    <img src="43.jpg" alt="E-Glass Shaft Analysis" class="gallery-thumb rounded w-24 h-20 object-cover" onclick="changeImage('shaft', '43.jpg')">
+                                    <img src="44.jpg" alt="HS Carbon Shaft" class="gallery-thumb rounded w-24 h-20 object-cover" onclick="changeImage('shaft', '44.jpg')">
                                 </div>
-                                <p class="text-xs text-gray-500 text-center mt-2">Click thumbnails to see more. (Placeholders represent images from 'FEA Based Vibration...' PDF)</p>
                             </div>
                         </div>
                     </div>

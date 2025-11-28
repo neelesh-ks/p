@@ -129,18 +129,52 @@
             </div>
         </section>
 
-        <!-- Section 2: Latest -->
+       <!-- Section 2: Image Carousel -->
         <section id="about" class="py-24 fade-in-section">
           <div class="container mx-auto max-w-6xl px-6">
-            <div class="flex justify-center">
-              <img 
-                src="51.jpg" 
-                alt="About Section Image" 
-                class="rounded-lg shadow-lg max-w-full h-auto"
-              />
+            <div class="relative w-full max-w-3xl mx-auto">
+              
+              <!-- Images -->
+              <div class="overflow-hidden rounded-lg shadow-lg">
+                <img id="carousel-image" src="51.jpg" alt="Carousel Image" class="w-full h-auto object-cover">
+              </div>
+        
+              <!-- Left Arrow -->
+              <button onclick="prevImage()" 
+                      class="absolute top-1/2 left-0 transform -translate-y-1/2 bg-gray-800 text-white p-3 rounded-full hover:bg-gray-600">
+                &#8592;
+              </button>
+        
+              <!-- Right Arrow -->
+              <button onclick="nextImage()" 
+                      class="absolute top-1/2 right-0 transform -translate-y-1/2 bg-gray-800 text-white p-3 rounded-full hover:bg-gray-600">
+                &#8594;
+              </button>
             </div>
           </div>
         </section>
+        
+        <script>
+          // Array of image sources
+          const images = ["51.jpg", "52.jpg", "53.jpg", "54.jpg", "55.jpg"];
+          let currentIndex = 0;
+        
+          function showImage(index) {
+            const imgElement = document.getElementById("carousel-image");
+            imgElement.src = images[index];
+          }
+        
+          function nextImage() {
+            currentIndex = (currentIndex + 1) % images.length; // loops infinitely
+            showImage(currentIndex);
+          }
+        
+          function prevImage() {
+            currentIndex = (currentIndex - 1 + images.length) % images.length; // loops infinitely
+            showImage(currentIndex);
+          }
+        </script>
+
         <!-- Section 2: About & Skills -->
         <section id="about" class="py-24 fade-in-section">
             <div class="container mx-auto max-w-6xl px-6">

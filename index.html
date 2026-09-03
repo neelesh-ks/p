@@ -221,6 +221,9 @@
                 
                 <!-- Tab Buttons -->
                 <div class="flex flex-wrap justify-center border-b border-gray-300 mb-12">
+                    <button class="tab-button text-lg font-medium text-gray-500 border-b-2 border-transparent px-6 py-3 transition-all" onclick="showTab('project5')">
+                        Instrole
+                    </button>
                     <button class="tab-button active text-lg font-medium text-gray-500 border-b-2 border-transparent px-6 py-3 transition-all" onclick="showTab('project1')">
                         Cleaning Cart
                     </button>
@@ -237,8 +240,39 @@
 
                 <!-- Tab Content -->
                 <div id="tab-content">
-
-                    <!-- Project 1: Cleaning Cart -->
+                    <!-- Project 1: Instole -->
+                    <div id="project1" class="tab-panel active fade-in-section is-visible">
+                        <div class="grid md:grid-cols-2 gap-12 items-center">
+                            <div>
+                                <h3 class="text-3xl font-bold mb-4">Ergonomic Street Cleaning Cart</h3>
+                                <span class="inline-block bg-green-100 text-green-800 text-sm font-medium px-3 py-1 rounded-full mb-4">Award-Winning & Patented (No. 441947-001)</span>
+                                
+                                <h4 class="text-xl font-semibold mb-2">The Challenge</h4>
+                                <p class="text-gray-600 mb-4">Field research with 150+ municipal workers revealed a 63% prevalence of Work-Related Musculoskeletal Disorders (WMSDs), primarily from high-risk "scraping" and "picking" tasks.</p>
+                                
+                                <h4 class="text-xl font-semibold mb-2">The Solution</h4>
+                                <p class="text-gray-600 mb-4">A patented (No. 441947-001), low-cost ergonomic cart developed through four iterative prototypes. The design allows workers to maintain an erect posture, dramatically reducing spinal loads.</p>
+                                
+                                <h4 class="text-xl font-semibold mb-2">Key Outcomes</h4>
+                                <ul class="text-gray-600 space-y-2">
+                                    <li class="flex items-center"><i data-lucide="check-circle" class="w-5 h-5 text-green-500 mr-2"></i>41% reduction in spinal compression forces.</li>
+                                    <li class="flex items-center"><i data-lucide="check-circle" class="w-5 h-5 text-green-500 mr-2"></i>63% reduction in worker injury rates.</li>
+                                    <li class="flex items-center"><i data-lucide="check-circle" class="w-5 h-5 text-green-500 mr-2"></i>100% increase in worker productivity.</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <!-- Image Gallery -->
+                                <img id="main-image-cart" src="10.jpg" alt="Ergonomic Cart Final Prototype" class="w-full rounded-lg shadow-lg mb-4 object-cover  h-[450px]">
+                                <div class="flex gap-2 justify-center">
+                                    <img src="12.jpg" alt="High-risk manual posture" class="gallery-thumb rounded w-24 h-20 object-cover" onclick="changeImage('cart', '12.jpg')">
+                                    <img src="13.jpg" alt="Prototype evolution" class="gallery-thumb rounded w-24 h-20 object-cover" onclick="changeImage('cart', '13.jpg')">
+                                    <img src="14.jpg" alt="Pain map" class="gallery-thumb rounded w-24 h-20 object-cover" onclick="changeImage('cart', '14.jpg')">
+                                    <img src="11.jpg" alt="Final prototype" class="gallery-thumb rounded w-24 h-20 object-cover" onclick="changeImage('cart', '11.jpg')">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Project 2: Cleaning Cart -->
                     <div id="project1" class="tab-panel active fade-in-section is-visible">
                         <div class="grid md:grid-cols-2 gap-12 items-center">
                             <div>
@@ -271,7 +305,7 @@
                         </div>
                     </div>
 
-                    <!-- Project 2: Smart Glove -->
+                    <!-- Project 3: Smart Glove -->
                     <div id="project2" class="tab-panel fade-in-section">
                         <div class="grid md:grid-cols-2 gap-12 items-center">
                             <div>
@@ -304,7 +338,7 @@
                         </div>
                     </div>
 
-                    <!-- Project 3: Biomechanical FEA -->
+                    <!-- Project 4: Biomechanical FEA -->
                     <div id="project3" class="tab-panel fade-in-section">
                         <div class="grid md:grid-cols-2 gap-12 items-center">
                             <div>
@@ -334,7 +368,7 @@
                             </div>
                         </div>
                     </div>
-  <!-- Project 4: Posture assessment -->
+                    <!-- Project 5: Posture assessment -->
                     <div id="project4" class="tab-panel fade-in-section">
                         <div class="grid md:grid-cols-2 gap-12 items-center">
                             <div>
